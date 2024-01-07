@@ -522,10 +522,12 @@ class Three_State_Hypercube():
         Lambda_2, Mu_2, frac_j_2, pre_list_2 = [self.sub2.data_dict.get(key) for key in keys_sub]
 
         if self.sub1.data_dict['Mu_vec'] is not None:
+            print("Hete Mu!")
             flag_diff_mu = 1
             Mu_vec_1 = self.sub1.data_dict['Mu_vec']
             Mu_vec_2 = self.sub2.data_dict['Mu_vec']
         else:
+            print("Homo Mu!")
             flag_diff_mu = 0
 
 
@@ -817,7 +819,7 @@ class Three_State_Hypercube():
                                                                    keys_sub]
         if type == "mat":
             Mu_mat_1, Mu_mat_2 = self.sub1.data_dict['Mu_mat'], self.sub2.data_dict['Mu_mat']
-        else:
+        elif type == "vec":
             Mu_vec_1, Mu_vec_2 = self.sub1.data_dict['Mu_vec'], self.sub2.data_dict['Mu_vec']
         # change preference list to incorporate separate units
         pre_list_1_simu = pre_list_1.copy()  # make a copy of the preference list so that the original will not be modified
@@ -887,18 +889,18 @@ class Three_State_Hypercube():
                             u = unit - N_2  # joint
                         if type == "mat":
                             service_time = Get_Random_Sample(Mu_mat_1[arrival[1]][u], service_distribution)
-                            # service_time = np.random.exponential(1 / Mu_mat_1[arrival[1]][u])
-                        else:
+                        elif type == "vec":
                             service_time = Get_Random_Sample(Mu_vec_1[u], service_distribution)
-                            # service_time = np.random.exponential(1 / Mu_vec_1[u])
+                        else:
+                            service_time = Get_Random_Sample(Mu_1, service_distribution)
                         q_nj_1[arrival[1]][unit] += 1
                     else:
                         if type == "mat":
                             service_time = Get_Random_Sample(Mu_mat_2[arrival[1]][unit - N_1], service_distribution)
-                            # service_time = np.random.exponential(1 / Mu_mat_2[arrival[1]][unit - N_1])
-                        else:
+                        elif type == "vec":
                             service_time = Get_Random_Sample(Mu_vec_2[unit - N_1], service_distribution)
-                            # service_time = np.random.exponential(1 / Mu_vec_2[unit - N_1])
+                        else:
+                            service_time = Get_Random_Sample(Mu_2, service_distribution)
                         q_nj_2[arrival[1]][unit] += 1
                     service_end_time = service_time + arrival[0]
                     busy_unit.append((unit, service_end_time, service_time, arrival[2]))
@@ -1017,3 +1019,6 @@ print(system.rho_hyper_1, system.rho_hyper_2, system.Get_MRT_3state())
 system.Reset_Alpha()
 system.Linear_Alpha()
 print(system.sub1.rho_approx, system.sub2.rho_approx, system.Get_MRT_Approx_3state())
+
+MRT_1, MRT_2, _, rho_sim_1, rho_sim_2, _ = system.Simulator_Mu_nj(type="vec")
+print(rho_sim_1, rho_sim_2, MRT_1, MRT_2)

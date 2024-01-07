@@ -96,6 +96,10 @@ print(system.rho_hyper_1, system.rho_hyper_2, system.Get_MRT_3state())
 system.Reset_Alpha()
 system.Linear_Alpha()
 print(system.sub1.rho_approx, system.sub2.rho_approx, system.Get_MRT_Approx_3state())
+
+# Solve the system with simulation
+MRT_1, MRT_2, _, rho_sim_1, rho_sim_2, _ = system.Simulator_Mu_nj(type="vec")
+print(rho_sim_1, rho_sim_2, MRT_1, MRT_2)
 ```
 
 
