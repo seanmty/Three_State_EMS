@@ -38,7 +38,7 @@ In this project, we provide the algorithm codes in this paper, which is used to 
   - Compile `Three_States.py` and `block_prob.py` together
   - In `Three_States.py`, a sample codes of implementation is shown. You can also implement by yourself.
 - Interactive interface:
-  - Download `map_hypercube.exe` from xxxx
+  - Download `map_hypercube.exe` from https://ufile.io/ftmx8uqx
   - `map_hypercube.exe` should be placed in the same directory with directory `tracts` and `figures`
   - Double click `map_hypercube.exe` and you can see the interface
   
@@ -141,7 +141,6 @@ print(system.sub1.rho_approx, system.sub2.rho_approx, system.Get_MRT_Approx_3sta
 
 # Reference
 
-Paper:
-
-Saint Paul, Minnesota
+- Paper: Cheng H, Tianyi M. Approximating the Performance of Three-State Emergency Service Systems. 
+- Data: Private data of EMS and Fire calls and services in Saint Paul, Minnesota
 
