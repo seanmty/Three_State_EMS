@@ -8,17 +8,6 @@ This is codes for "Approximating the Performance of Three-State Emergency Servic
 
 In this project, we provide the algorithm codes in this paper, which is used to analyze the stochastic system with exact method, approximation method, and simulation. Also, an interactive interface is provided to show how our algorithm and codes can be used in a real-life case in Saint Paul, Minnesota, where you can drag and allocation different stations and get the metrics immediately. 
 
-## Contact Information
-
-- Professor Cheng Hua
-  - Institute: Antai College of Economics and Management, Shanghai Jiao Tong University
-  - E-mail: cheng.hua@sjtu.edu.cn
-- Tianyi Ma
-  - Institute: University of Michigan-Shanghai Jiao Tong University Joint Institute
-  - E-mail: sean_ma@sjtu.edu.cn
-
-
-
 
 # Installation Instructions
 
@@ -146,5 +135,12 @@ print(rho_sim_1, rho_sim_2, MRT_1, MRT_2)
 # Reference
 
 - Paper: Cheng H, Tianyi M. Approximating the Performance of Three-State Emergency Service Systems. 
-- Data: Private data of EMS and Fire calls and services in Saint Paul, Minnesota
 
+# Contact Information
+
+- Cheng Hua
+  - Antai College of Economics and Management, Shanghai Jiao Tong University
+  - E-mail: cheng.hua@sjtu.edu.cn
+- Tianyi Ma
+  - University of Michigan-Shanghai Jiao Tong University Joint Institute
+  - E-mail: sean_ma@sjtu.edu.cn
