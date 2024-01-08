@@ -231,7 +231,7 @@ class Two_State_Hypercube():
         self.r = r
         return Q
 
-    def Larson_Approx(self, normalize=False, use_effective_lambda=True, epsilon=0.0001, flag_diff_mu=0):
+    def Two_State_Approx(self, normalize=False, use_effective_lambda=True, epsilon=0.0001, flag_diff_mu=0):
         """
         Approximate utilization for each subsystem,
         alpha is considered when the other subsystem exists.
@@ -311,9 +311,9 @@ class Two_State_Hypercube():
                 rho_i = np.array(rho_i_)
                 rho_i_ = np.zeros(N)
 
-    def Larson_Approx_Mu_nj(self, epsilon=0.0001):  # This function includes heterogeneous mu
+    def Two_State_Approx_Mu_nj(self, epsilon=0.0001):  # This function includes heterogeneous mu
         """
-        Similar to Larson_Approx(), but mu is heterogeneous among units and atoms.
+        Similar to Two_State_Approx(), but mu is heterogeneous among units and atoms.
         We only consider no normalize and use effective lambda cases
         :param epsilon:
         :return: approximated utilization
@@ -731,17 +731,17 @@ class Three_State_Hypercube():
             ite += 1
             # subsystem 1
             if flag_diff_mu == 2:
-                self.sub1.Larson_Approx_Mu_nj()
+                self.sub1.Two_State_Approx_Mu_nj()
             else:
-                self.sub1.Larson_Approx(use_effective_lambda=use_effective_lambda, normalize=normalize, flag_diff_mu=flag_diff_mu)
+                self.sub1.Two_State_Approx(use_effective_lambda=use_effective_lambda, normalize=normalize, flag_diff_mu=flag_diff_mu)
             alpha = self.Update_alpha(method='approx', subsystem=1)
             self.sub2.alpha = alpha
 
             # subsystem 2
             if flag_diff_mu == 2:
-                self.sub2.Larson_Approx_Mu_nj()
+                self.sub2.Two_State_Approx_Mu_nj()
             else:
-                self.sub2.Larson_Approx(use_effective_lambda=use_effective_lambda, normalize=normalize, flag_diff_mu=flag_diff_mu)
+                self.sub2.Two_State_Approx(use_effective_lambda=use_effective_lambda, normalize=normalize, flag_diff_mu=flag_diff_mu)
             alpha = self.Update_alpha(method='approx', subsystem=2)
             if (max(abs(alpha - self.sub1.alpha))< epsilon):
                 run = False
