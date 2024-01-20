@@ -129,14 +129,8 @@ print(rho_sim_1, rho_sim_2, MRT_1, MRT_2)
 
 # Reference
 
-- Hua, C., & Ma, T. Approximating the Performance of Three-State Emergency Service Systems. 
+- Approximating the Performance of Three-State Emergency Service Systems. 
 
 ## Contact
 
-- Cheng Hua
-  - Antai College of Economics and Management, Shanghai Jiao Tong University
-  - E-mail: cheng.hua@sjtu.edu.cn
-- Tianyi Ma
-  - University of Michigan-Shanghai Jiao Tong University Joint Institute
-  - School of Operations Research and Information Engineering, Cornell University
-  - E-mail: tm693@cornell.edu, sean_ma@sjtu.edu.cn
+Hidden for double-blind paper
