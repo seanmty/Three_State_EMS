@@ -1,5 +1,3 @@
-<center><font size=6>Codes and Interactive Interface of Saint Paul</font></center>
-
 # Introduction
 
 This code is for the algorithm we developed in the paper "Approximating the Performance of Three-State Emergency Service Systems." It includes an interactive tool using real EMS data to aid the operational decisions of EMS managers.
